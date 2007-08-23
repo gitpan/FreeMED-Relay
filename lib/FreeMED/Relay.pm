@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $Id: Relay.pm 71 2007-08-14 00:33:05Z jeff $
+# $Id: Relay.pm 75 2007-08-23 14:13:56Z jeff $
 #
 # Authors:
 #      Jeff Buchbinder <jeff@freemedsoftware.org>
@@ -35,7 +35,7 @@ use HTTP::Cookies;
 
 use vars qw{ $VERSION };
 BEGIN {
-	$VERSION = '0.2';
+	$VERSION = '0.2.1';
 }
 
 sub new {
@@ -93,7 +93,7 @@ sub call {
 	foreach my $param (@params) {
 		print "param = '$param'\n";
 		if ( $param =~ /^HASH\(/ && $param->{'@var'} ) {
-			print "Found file upload var in $param->{'@var'}\n" if (@self->{debug});
+			print "Found file upload var in $param->{'@var'}\n" if ($self->{'debug'});
 			# Add file transfer under @var = var, @filename = filename
 			$p{$param->{'@var'}} = [ $param->{'@filename'} ];
 		} else {
