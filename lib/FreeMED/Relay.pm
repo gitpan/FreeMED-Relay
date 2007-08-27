@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $Id: Relay.pm 75 2007-08-23 14:13:56Z jeff $
+# $Id: Relay.pm 80 2007-08-24 17:02:58Z jeff $
 #
 # Authors:
 #      Jeff Buchbinder <jeff@freemedsoftware.org>
@@ -35,7 +35,7 @@ use HTTP::Cookies;
 
 use vars qw{ $VERSION };
 BEGIN {
-	$VERSION = '0.2.1';
+	$VERSION = '0.2.2';
 }
 
 sub new {
@@ -125,7 +125,7 @@ __END__
 
 =pod
 
-=head NAME
+=head1 NAME
 
 FreeMED::Relay
 
@@ -134,6 +134,10 @@ FreeMED::Relay
 Provide access to FreeMED 0.9.x+ data relay
 
 =head1 DESCRIPTION
+
+Backend access to the FreeMED Electronic Medical Record and Practice
+Management system ( http://freemedsoftware.org/ ) for versions begining
+with 0.9.0 using the JSON transport capabilities of its data relay.
 
 =head1 METHODS
 
